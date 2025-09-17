@@ -14,8 +14,16 @@ import {
   Bot,
   Smartphone,
 } from "lucide-react"
+import Carousel from "../components/ui/carousel";
 
 export default function BarbershopAILanding() {
+  // Supondo que suas imagens estejam em public/images/
+  const images = [
+    "/images/card-0.png",
+    "/images/card-2.png",
+    "/images/card-3.png",
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground cyber-grid">
       <section className="relative py-20 px-4">
@@ -148,13 +156,18 @@ export default function BarbershopAILanding() {
       </section>
       <section className="pt-0 pb-8 px-4 bg-muted/10">
   <div className="container mx-auto max-w-6xl">
-    <h2 className="text-3xl md:text-5xl font-bold mb-6 gradient-text-cyan neon-text-glow-green text-center">
+    <h2 className="text-3xl md:text-5xl font-bold mb-6 gradient-text-cyan neon-text-glow">
       Foque em fazer um corte perfeito e deixe a gente dar conta de todo o seu atendimento.
     </h2>
     <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-16 text-center">
-              Você não precisa{" "} <strong className="gradient-text-cyan neon-text-glow">fazer tuido sozinho</strong>
-            </p>
-    <div className="flex flex-row justify-center items-end gap-8">
+      Você não precisa{" "} <strong className="gradient-text-cyan neon-text-glow">fazer tudo sozinho</strong>
+    </p>
+    {/* Carrossel só no mobile */}
+    <div className="block md:hidden">
+      <Carousel images={["/images/card-0.png", "/images/card-2.png", "/images/card-3.png"]} />
+    </div>
+    {/* Imagens lado a lado só no desktop/tablet */}
+    <div className="hidden md:flex flex-row justify-center items-end gap-8">
       <img
         src="/images/card-0.png"
         alt="Imagem 1"
