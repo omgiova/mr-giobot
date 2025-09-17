@@ -259,7 +259,7 @@ export default function BarbershopAILanding() {
           <div className="grid md:grid-cols-2 gap-8 mb-16 mt-20">
             <Card className="cyber-border border-primary/50 bg-primary/5 neon-glow">
               <CardHeader>
-                <CardTitle className="text-primary flex items-center gap-2 text-lg">
+                <CardTitle className="gradient-text-cyan neon-text-glow flex items-center gap-2 text-xl">
                   <MessageSquare className="w-6 h-6" />
                   Por que um atendimento eficiente, instantâneo e inteligente funciona?
                 </CardTitle>
@@ -307,37 +307,37 @@ export default function BarbershopAILanding() {
 
             <Card className="cyber-border border-primary/50 bg-primary/5 neon-glow">
               <CardHeader>
-                <CardTitle className="text-primary flex items-center gap-2 text-lg">
+                <CardTitle className="gradient-text-cyan neon-text-glow flex items-center justify-center gap-2 text-xl">
                   <TrendingUp className="w-6 h-6" />
                   E o resultado?
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <Clock className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <p className="text-foreground">
-                    <strong>90% de taxa de conversão</strong> - Empresas que respondem em até 1 minuto têm 90% de taxa de conversão positiva, enquanto as que demoram 30 minutos ou mais têm apenas 10% de sucesso. <em className="text-primary font-medium">A velocidade da sua resposta pode multiplicar seus agendamentos em 9 vezes!</em>
+              <CardContent className="space-y-8">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <Clock className="w-6 h-6 text-primary" />
+                  <p className="text-foreground leading-relaxed">
+                    <strong>Empresas que respondem em até 1 minuto têm 90% de taxa de conversão positiva</strong>, enquanto as que demoram 30 minutos ou mais têm apenas 10% de sucesso. <em className="text-primary font-medium">A velocidade da sua resposta pode multiplicar seus agendamentos em 9 vezes!</em>
                   </p>
                 </div>
                 
-                <div className="flex items-start gap-3">
-                  <Scissors className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <p className="text-foreground">
-                    <strong>50% menos tempo</strong> - Barbearias que adotaram a automação já relatam redução de até 50% no tempo gasto em trocas de mensagens e <em className="text-primary font-medium">um aumento significativo na taxa de novos agendamentos.</em>
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <Scissors className="w-6 h-6 text-primary" />
+                  <p className="text-foreground leading-relaxed">
+                    <strong>Barbearias que adotaram a automação já relatam redução de até 50%</strong> no tempo gasto em trocas de mensagens e <em className="text-primary font-medium">um aumento significativo na taxa de novos agendamentos.</em>
                   </p>
                 </div>
                 
-                <div className="flex items-start gap-3">
-                  <Heart className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <p className="text-foreground">
-                    <strong>82,9% dos clientes</strong> - Uma esmagadora maioria, 82,9% dos clientes, acredita que <em className="text-primary font-medium">um bom atendimento influencia diretamente sua fidelização a uma empresa.</em>
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <Heart className="w-6 h-6 text-primary" />
+                  <p className="text-foreground leading-relaxed">
+                    <strong>Uma esmagadora maioria, 82,9% dos clientes,</strong> acredita que <em className="text-primary font-medium">um bom atendimento influencia diretamente sua fidelização a uma empresa.</em>
                   </p>
                 </div>
                 
-                <div className="flex items-start gap-3">
-                  <Zap className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <p className="text-foreground">
-                    <strong>100% de redução</strong> - Redução de até 100% no tempo de atendimento.
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <Zap className="w-6 h-6 text-primary" />
+                  <p className="text-foreground leading-relaxed">
+                    <strong>Redução de até 100% no tempo </strong> <em className="text-primary font-medium">de atendimento.</em>
                   </p>
                 </div>
               </CardContent>
