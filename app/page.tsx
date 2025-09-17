@@ -26,59 +26,62 @@ export default function BarbershopAILanding() {
 
   return (
     <div className="min-h-screen bg-background text-foreground cyber-grid">
-      <section className="relative py-20 px-4">
+      {/* Hero Section - Fully Responsive */}
+      <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <Badge className="bg-accent/20 text-accent border-accent/50 cyber-border px-4 py-2 text-sm font-bold neon-glow-green">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-4 sm:space-y-6 lg:space-y-8 order-1">
+              <Badge className="bg-accent/20 text-accent border-accent/50 cyber-border px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold neon-glow-green w-fit">
                 Mr. Giobot: A revolução do atendimento no WhatsApp
               </Badge>
 
-              <div className="flex items-start gap-6">
-                <h1 className="text-4xl md:text-6xl font-bold text-balance leading-tight">
+              <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
                   <span className="block text-foreground">Transforme sua barbearia em uma</span>
                   <span className="block gradient-text-cyan neon-text-glow">Máquina de Agendamentos!</span>
                 </h1>
 
-                <div className="relative flex-shrink-0">
+                <div className="relative flex-shrink-0 hidden sm:block">
                   <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl"></div>
-                  <MessageSquare className="relative w-16 h-16 text-primary neon-glow" />
+                  <MessageSquare className="relative w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-primary neon-glow" />
                 </div>
               </div>
 
-              <p className="text-xl text-muted-foreground text-pretty">
+              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed">
                 Chega de perder clientes por demorar um pouco pra responder, ou aquele que manda mensagem 10 da noite de um sábado.
                 Nossa solução tem a{" "}
                 <strong className="text-primary neon-text-glow">maior paciência do mundo </strong>
                 e vai atender seus clientes com a naturalidade de uma conversa real <strong className="text-primary neon-text-glow">24 horas por dia</strong>. Se liga no exemplo ao lado!
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button
                   size="lg"
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground cyber-border px-8 py-4 text-lg font-bold neon-glow-green"
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground cyber-border px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold neon-glow-green w-full sm:w-auto"
                 >
                   Teste grátis
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-primary text-primary hover:bg-primary/10 cyber-border px-8 py-4 text-lg bg-transparent neon-glow"
-                ><a
-    href="https://wa.me/5511986501499?text=Ol%C3%A1!%20Quero%20minha%20demonstra%C3%A7%C3%A3o%20do%20MR.%20GIOBOT%2C%20a%20m%C3%A1quina%20de%20agendamentos%20para%20barbearias%21"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Agendar demonstração
-  </a>
+                  className="border-primary text-primary hover:bg-primary/10 cyber-border px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-transparent neon-glow w-full sm:w-auto"
+                >
+                  <a
+                    href="https://wa.me/5511986501499?text=Ol%C3%A1!%20Quero%20minha%20demonstra%C3%A7%C3%A3o%20do%20MR.%20GIOBOT%2C%20a%20m%C3%A1quina%20de%20agendamentos%20para%20barbearias%21"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-center"
+                  >
+                    Agendar demonstração
+                  </a>
                 </Button>
               </div>
             </div>
 
-            <div className="flex justify-center">
-              <div className="flex flex-col items-center space-y-12 max-w-md">
-                {/* Espaço para vídeo formato story (9:16) - maior */}
-                <div className="relative w-90 h-180 bg-muted/10 rounded-2xl cyber-border neon-glow overflow-hidden">
+            <div className="flex justify-center order-2">
+              <div className="flex flex-col items-center space-y-8 sm:space-y-12 max-w-sm sm:max-w-md">
+                {/* Video container - responsive */}
+                <div className="relative w-64 h-[456px] sm:w-80 sm:h-[570px] lg:w-90 lg:h-180 bg-muted/10 rounded-2xl cyber-border neon-glow overflow-hidden">
                   <iframe
                     src="https://drive.google.com/file/d/11AUrmvJQ6XVFvVQ8WijTkD34lD9s0CUt/preview"
                     className="w-full h-full rounded-2xl"
@@ -154,38 +157,44 @@ export default function BarbershopAILanding() {
           </div>
         </div>
       </section>
-      <section className="pt-0 pb-8 px-4 bg-muted/10">
-  <div className="container mx-auto max-w-6xl">
-    <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold mb-6 gradient-text-cyan neon-text-glow text-center">
-      Foque em fazer um corte perfeito e deixe a gente dar conta de todo o seu atendimento.
-    </h2>
-    <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 md:mb-16 text-center">
-      Você não precisa{" "} <strong className="gradient-text-cyan neon-text-glow">fazer tudo sozinho</strong>
-    </p>
-    {/* Carrossel só no mobile */}
-    <div className="block md:hidden px-4">
-      <Carousel images={["/images/card-0.png", "/images/card-2.png", "/images/card-3.png"]} />
-    </div>
-    {/* Imagens lado a lado só no desktop/tablet */}
-    <div className="hidden md:flex flex-row justify-center items-end gap-4 lg:gap-8">
-      <img
-        src="/images/card-0.png"
-        alt="Imagem 1"
-        className="rounded-2xl border cyber-border neon-glow w-72 lg:w-88 aspect-[9/16] object-cover"
-      />
-      <img
-        src="/images/card-2.png"
-        alt="Imagem 2"
-        className="rounded-2xl border cyber-border neon-glow w-72 lg:w-88 aspect-[9/16] object-cover"
-      />
-      <img
-        src="/images/card-3.png"
-        alt="Imagem 3"
-        className="rounded-2xl border cyber-border neon-glow w-72 lg:w-88 aspect-[9/16] object-cover"
-      />
-    </div>
-  </div>
-</section>
+      {/* Mobile Carousel Section - Fully Responsive */}
+      <section className="py-6 sm:py-8 lg:py-12 px-4 sm:px-6 bg-muted/10">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6 lg:mb-8 gradient-text-cyan neon-text-glow text-center">
+            Foque em fazer um corte perfeito e deixe a gente dar conta de todo o seu atendimento.
+          </h2>
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 sm:mb-8 lg:mb-16 text-center">
+            Você não precisa{" "} <strong className="gradient-text-cyan neon-text-glow">fazer tudo sozinho</strong>
+          </p>
+          
+          {/* Mobile Carousel - Optimized */}
+          <div className="block md:hidden">
+            <Carousel 
+              images={["/images/card-0.png", "/images/card-2.png", "/images/card-3.png"]} 
+              altTexts={["Demonstração 1", "Demonstração 2", "Demonstração 3"]}
+            />
+          </div>
+          
+          {/* Desktop Images - Responsive */}
+          <div className="hidden md:flex flex-row justify-center items-end gap-4 lg:gap-6 xl:gap-8">
+            <img
+              src="/images/card-0.png"
+              alt="Demonstração 1"
+              className="rounded-2xl border cyber-border neon-glow w-56 lg:w-72 xl:w-80 aspect-[9/16] object-cover transition-transform hover:scale-105"
+            />
+            <img
+              src="/images/card-2.png"
+              alt="Demonstração 2"
+              className="rounded-2xl border cyber-border neon-glow w-56 lg:w-72 xl:w-80 aspect-[9/16] object-cover transition-transform hover:scale-105"
+            />
+            <img
+              src="/images/card-3.png"
+              alt="Demonstração 3"
+              className="rounded-2xl border cyber-border neon-glow w-56 lg:w-72 xl:w-80 aspect-[9/16] object-cover transition-transform hover:scale-105"
+            />
+          </div>
+        </div>
+      </section>
 
       <section id="resultados" className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">

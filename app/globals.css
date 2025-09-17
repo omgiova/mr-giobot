@@ -181,4 +181,33 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  /* Mobile-specific optimizations */
+  @media (max-width: 768px) {
+    .mobile-carousel {
+      touch-action: pan-x;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .mobile-touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    .mobile-text {
+      font-size: clamp(0.875rem, 4vw, 1.125rem);
+      line-height: 1.5;
+    }
+    
+    .mobile-spacing {
+      padding: clamp(1rem, 4vw, 2rem);
+    }
+  }
+
+  /* High DPI screens */
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .neon-glow {
+      box-shadow: 0 0 3px oklch(0.7 0.3 180 / 0.6), 0 0 6px oklch(0.7 0.3 180 / 0.4), 0 0 9px oklch(0.7 0.3 180 / 0.3);
+    }
+  }
 }
