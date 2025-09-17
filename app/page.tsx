@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -14,9 +16,12 @@ import {
   Bot,
   Smartphone,
 } from "lucide-react"
-import Carousel from "../components/ui/Carousel";
+import Carousel from "../components/ui/Carousel"
+import { useIsMobile } from "@/components/ui/use-mobile"
 
 export default function BarbershopAILanding() {
+  const isMobile = useIsMobile()
+  
   // Supondo que suas imagens estejam em public/images/
   const images = [
     "/images/card-0.png",
@@ -27,27 +32,27 @@ export default function BarbershopAILanding() {
   return (
     <div className="min-h-screen bg-background text-foreground cyber-grid">
       {/* Hero Section - Fully Responsive */}
-      <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6">
+      <section className="relative py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 px-4 sm:px-6 hero-mobile">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             <div className="space-y-4 sm:space-y-6 lg:space-y-8 order-1">
               <Badge className="bg-accent/20 text-accent border-accent/50 cyber-border px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold neon-glow-green w-fit">
                 Mr. Giobot: A revolução do atendimento no WhatsApp
               </Badge>
 
               <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mobile-text">
                   <span className="block text-foreground">Transforme sua barbearia em uma</span>
                   <span className="block gradient-text-cyan neon-text-glow">Máquina de Agendamentos!</span>
                 </h1>
 
                 <div className="relative flex-shrink-0 hidden sm:block">
                   <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl"></div>
-                  <MessageSquare className="relative w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-primary neon-glow" />
+                  <MessageSquare className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 text-primary neon-glow" />
                 </div>
               </div>
 
-              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-muted-foreground leading-relaxed mobile-text">
                 Chega de perder clientes por demorar um pouco pra responder, ou aquele que manda mensagem 10 da noite de um sábado.
                 Nossa solução tem a{" "}
                 <strong className="text-primary neon-text-glow">maior paciência do mundo </strong>
@@ -57,14 +62,14 @@ export default function BarbershopAILanding() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button
                   size="lg"
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground cyber-border px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold neon-glow-green w-full sm:w-auto"
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground cyber-border px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold neon-glow-green w-full sm:w-auto mobile-touch-target"
                 >
                   Teste grátis
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-primary text-primary hover:bg-primary/10 cyber-border px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-transparent neon-glow w-full sm:w-auto"
+                  className="border-primary text-primary hover:bg-primary/10 cyber-border px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-transparent neon-glow w-full sm:w-auto mobile-touch-target"
                 >
                   <a
                     href="https://wa.me/5511986501499?text=Ol%C3%A1!%20Quero%20minha%20demonstra%C3%A7%C3%A3o%20do%20MR.%20GIOBOT%2C%20a%20m%C3%A1quina%20de%20agendamentos%20para%20barbearias%21"
@@ -79,14 +84,15 @@ export default function BarbershopAILanding() {
             </div>
 
             <div className="flex justify-center order-2">
-              <div className="flex flex-col items-center space-y-8 sm:space-y-12 max-w-sm sm:max-w-md">
+              <div className="flex flex-col items-center space-y-6 sm:space-y-8 lg:space-y-12 max-w-xs sm:max-w-sm lg:max-w-md">
                 {/* Video container - responsive */}
-                <div className="relative w-64 h-[456px] sm:w-80 sm:h-[570px] lg:w-90 lg:h-180 bg-muted/10 rounded-2xl cyber-border neon-glow overflow-hidden">
+                <div className="relative w-full max-w-sm mx-auto aspect-[9/16] bg-muted/10 rounded-2xl cyber-border neon-glow overflow-hidden">
                   <iframe
                     src="https://drive.google.com/file/d/11AUrmvJQ6XVFvVQ8WijTkD34lD9s0CUt/preview"
                     className="w-full h-full rounded-2xl"
                     allow="autoplay"
                     title="Demonstração"
+                    loading="lazy"
                   ></iframe>
                 </div>
               </div>
@@ -158,26 +164,20 @@ export default function BarbershopAILanding() {
         </div>
       </section>
       {/* Mobile Carousel Section - Fully Responsive */}
-      <section className="py-6 sm:py-8 lg:py-12 px-4 sm:px-6 bg-muted/10">
+      <section className="py-6 sm:py-8 lg:py-12 px-4 sm:px-6 bg-muted/10 carousel-mobile">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6 lg:mb-8 gradient-text-cyan neon-text-glow text-center">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-4 sm:mb-6 lg:mb-8 gradient-text-cyan neon-text-glow text-center mobile-text">
             Foque em fazer um corte perfeito e deixe a gente dar conta de todo o seu atendimento.
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 sm:mb-8 lg:mb-16 text-center">
+          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 sm:mb-8 lg:mb-16 text-center mobile-text">
             Você não precisa{" "} <strong className="gradient-text-cyan neon-text-glow">fazer tudo sozinho</strong>
           </p>
           
           {/* Mobile Carousel - Always visible on mobile screens */}
           <div className="md:hidden">
             <div className="w-full max-w-sm mx-auto px-2">
-              {/* Debug indicator - remove this in production */}
-              <div className="text-center mb-2">
-                <span className="text-xs text-primary bg-primary/10 px-2 py-1 rounded font-mono">
-                  Mobile Carousel Active - Screen &lt; 768px
-                </span>
-              </div>
               <Carousel 
-                images={["/images/card-0.png", "/images/card-2.png", "/images/card-3.png"]} 
+                images={images} 
                 altTexts={["Demonstração 1", "Demonstração 2", "Demonstração 3"]}
               />
             </div>
@@ -185,21 +185,15 @@ export default function BarbershopAILanding() {
           
           {/* Desktop Images - Responsive */}
           <div className="hidden md:flex flex-row justify-center items-end gap-4 lg:gap-6 xl:gap-8">
-            <img
-              src="/images/card-0.png"
-              alt="Demonstração 1"
-              className="rounded-2xl border cyber-border neon-glow w-56 lg:w-72 xl:w-80 aspect-[9/16] object-cover transition-transform hover:scale-105"
-            />
-            <img
-              src="/images/card-2.png"
-              alt="Demonstração 2"
-              className="rounded-2xl border cyber-border neon-glow w-56 lg:w-72 xl:w-80 aspect-[9/16] object-cover transition-transform hover:scale-105"
-            />
-            <img
-              src="/images/card-3.png"
-              alt="Demonstração 3"
-              className="rounded-2xl border cyber-border neon-glow w-56 lg:w-72 xl:w-80 aspect-[9/16] object-cover transition-transform hover:scale-105"
-            />
+            {images.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`Demonstração ${index + 1}`}
+                className="rounded-2xl border cyber-border neon-glow w-56 lg:w-72 xl:w-80 aspect-[9/16] object-cover transition-transform hover:scale-105"
+                loading="lazy"
+              />
+            ))}
           </div>
         </div>
       </section>

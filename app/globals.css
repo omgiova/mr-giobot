@@ -187,6 +187,8 @@
     .mobile-carousel {
       touch-action: pan-x;
       -webkit-overflow-scrolling: touch;
+      user-select: none;
+      -webkit-user-select: none;
     }
     
     .mobile-touch-target {
@@ -202,12 +204,49 @@
     .mobile-spacing {
       padding: clamp(1rem, 4vw, 2rem);
     }
+    
+    /* Better mobile button interactions */
+    button {
+      -webkit-tap-highlight-color: transparent;
+      tap-highlight-color: transparent;
+    }
+    
+    /* Improve mobile video container */
+    iframe {
+      width: 100% !important;
+      height: 100% !important;
+      border: none;
+    }
+    
+    /* Mobile hero section optimization */
+    .hero-mobile {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    
+    /* Mobile carousel container */
+    .carousel-mobile {
+      max-width: 100vw;
+      overflow: hidden;
+    }
   }
 
-  /* High DPI screens */
+  /* High DPI screens and improved mobile performance */
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .neon-glow {
       box-shadow: 0 0 3px oklch(0.7 0.3 180 / 0.6), 0 0 6px oklch(0.7 0.3 180 / 0.4), 0 0 9px oklch(0.7 0.3 180 / 0.3);
+    }
+  }
+  
+  /* Performance optimizations for mobile */
+  @media (max-width: 768px) {
+    * {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    .neon-glow, .neon-glow-green, .neon-glow-magenta {
+      box-shadow: 0 0 2px currentColor, 0 0 4px currentColor;
     }
   }
 }

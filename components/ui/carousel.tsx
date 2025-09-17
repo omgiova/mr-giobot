@@ -1,5 +1,6 @@
 'use client'
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react"
+import { useIsMobile } from "./use-mobile"
 
 interface CarouselProps {
   images: string[];
@@ -11,9 +12,9 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
   const [hasError, setHasError] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const isMobile = useIsMobile();
 
   // Ensure we have valid images
   const validImages = images.filter(Boolean);
@@ -21,23 +22,13 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
     return (
       <div className="w-full max-w-sm mx-auto px-4">
         <div className="w-full aspect-[9/16] bg-muted/20 rounded-2xl border cyber-border flex items-center justify-center">
-          <div className="text-center text-muted-foreground">Nenhuma imagem disponível</div>
+          <div className="text-center text-muted-foreground text-sm">Nenhuma imagem disponível</div>
         </div>
       </div>
     );
   }
 
-  // Simple mobile detection that works reliably
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+
 
   const next = useCallback(() => {
     setCurrent((prev) => (prev + 1) % validImages.length);
@@ -51,7 +42,7 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
     setCurrent(index);
   }, []);
 
-  // Handle touch events for mobile swipe
+  // Handle touch events for mobile swipe - improved sensitivity
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
@@ -65,8 +56,8 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
     if (!touchStart || !touchEnd) return;
     
     const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
+    const isLeftSwipe = distance > 30; // Reduced threshold for better responsiveness
+    const isRightSwipe = distance < -30;
 
     if (isLeftSwipe) {
       next();
@@ -78,12 +69,12 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
     setTouchEnd(null);
   };
 
-  // Auto-advance carousel on mobile
+  // Auto-advance carousel on mobile with better timing
   useEffect(() => {
-    if (isMobile) {
+    if (isMobile && validImages.length > 1) {
       intervalRef.current = setInterval(() => {
         next();
-      }, 4000);
+      }, 5000); // Increased to 5 seconds for better UX
     }
 
     return () => {
@@ -91,7 +82,7 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
         clearInterval(intervalRef.current);
       }
     };
-  }, [isMobile, next]);
+  }, [isMobile, next, validImages.length]);
 
   // Pause auto-advance on user interaction
   const pauseAutoAdvance = () => {
@@ -101,10 +92,10 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
   };
 
   const resumeAutoAdvance = () => {
-    if (isMobile) {
+    if (isMobile && validImages.length > 1) {
       intervalRef.current = setInterval(() => {
         next();
-      }, 4000);
+      }, 5000);
     }
   };
 
@@ -195,14 +186,14 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
           onClick={() => {
             prev();
             pauseAutoAdvance();
-            setTimeout(resumeAutoAdvance, 2000);
+            setTimeout(resumeAutoAdvance, 3000);
           }}
-          className="absolute left-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/60 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm border border-white/20 touch-manipulation active:scale-95 mobile-touch-target"
+          className="absolute left-3 top-1/2 -translate-y-1/2 w-14 h-14 bg-black/70 hover:bg-black/90 active:bg-black/95 text-white rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm border border-white/30 touch-manipulation active:scale-90 z-10"
           aria-label="Imagem anterior"
           type="button"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
 
@@ -210,37 +201,37 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
           onClick={() => {
             next();
             pauseAutoAdvance();
-            setTimeout(resumeAutoAdvance, 2000);
+            setTimeout(resumeAutoAdvance, 3000);
           }}
-          className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/60 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm border border-white/20 touch-manipulation active:scale-95 mobile-touch-target"
+          className="absolute right-3 top-1/2 -translate-y-1/2 w-14 h-14 bg-black/70 hover:bg-black/90 active:bg-black/95 text-white rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm border border-white/30 touch-manipulation active:scale-90 z-10"
           aria-label="Próxima imagem"
           type="button"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
           </svg>
         </button>
 
         {/* Image counter overlay */}
-        <div className="absolute top-3 right-3 bg-black/60 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
+        <div className="absolute top-4 right-4 bg-black/80 text-white text-sm px-3 py-2 rounded-full backdrop-blur-sm border border-white/20">
           {current + 1} / {validImages.length}
         </div>
       </div>
       
       {/* Dots indicator - mobile optimized */}
-      <div className="flex justify-center mt-6 gap-3">
+      <div className="flex justify-center mt-6 gap-4">
         {validImages.map((_, idx) => (
           <button
             key={idx}
             onClick={() => {
               goToSlide(idx);
               pauseAutoAdvance();
-              setTimeout(resumeAutoAdvance, 2000);
+              setTimeout(resumeAutoAdvance, 3000);
             }}
-            className={`transition-all duration-300 touch-manipulation rounded-full ${
+            className={`transition-all duration-300 touch-manipulation rounded-full min-w-[44px] min-h-[44px] flex items-center justify-center ${
               idx === current 
-                ? "w-8 h-3 bg-primary" 
-                : "w-3 h-3 bg-muted hover:bg-muted-foreground/60 active:scale-110"
+                ? "w-10 h-4 bg-primary" 
+                : "w-4 h-4 bg-muted hover:bg-muted-foreground/60 active:scale-110"
             }`}
             aria-label={`Ver imagem ${idx + 1}`}
           />
@@ -249,10 +240,10 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
 
       {/* Swipe indicator for mobile */}
       {isMobile && (
-        <div className="text-center mt-3">
-          <p className="text-xs text-muted-foreground flex items-center justify-center gap-1">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l4-4m0 0l4-4m-4 4v12" />
+        <div className="text-center mt-4">
+          <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 13l3 3 7-7" />
             </svg>
             Deslize para navegar
           </p>
