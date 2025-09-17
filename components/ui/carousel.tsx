@@ -242,7 +242,7 @@ export {
 
 import React, { useState } from "react";
 
-interface ImageCarouselProps {
+interface CarouselProps {
   images: string[];
   altTexts?: string[];
 }
@@ -264,6 +264,7 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
         onClick={prev}
         className="absolute left-2 top-1/2 -translate-y-1/2 bg-primary text-background rounded-full p-2"
         aria-label="Anterior"
+        type="button"
       >
         &#8592;
       </button>
@@ -271,6 +272,7 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
         onClick={next}
         className="absolute right-2 top-1/2 -translate-y-1/2 bg-primary text-background rounded-full p-2"
         aria-label="Próxima"
+        type="button"
       >
         &#8594;
       </button>
