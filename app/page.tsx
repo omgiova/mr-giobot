@@ -92,7 +92,7 @@ export default function BarbershopAILanding() {
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Apresentamos{" "}
-              <strong className="gradient-text-cyan neon-text-glow">Mr. Giobot, seu Atendente Virtual altamente treinado</strong>
+              <strong className="gradient-text-cyan neon-text-glow">Mr. Giobot, o piloto automático do barbeiro</strong>
             </p>
           </div>
 

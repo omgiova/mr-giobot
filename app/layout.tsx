@@ -5,7 +5,7 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Mr Giobot',
+  title: 'Mr. Giobot - O piloto automático do barbeiro',
   description: 'Criado por Giovani Amorim',
   generator: 'MR. GIOBOT',
 }
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/icon2.png" type="image/png" />
+        <link rel="icon" href="/icon3.png" type="image/png" />
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         {children}
