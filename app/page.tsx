@@ -167,12 +167,20 @@ export default function BarbershopAILanding() {
             Você não precisa{" "} <strong className="gradient-text-cyan neon-text-glow">fazer tudo sozinho</strong>
           </p>
           
-          {/* Mobile Carousel - Optimized */}
-          <div className="block md:hidden">
-            <Carousel 
-              images={["/images/card-0.png", "/images/card-2.png", "/images/card-3.png"]} 
-              altTexts={["Demonstração 1", "Demonstração 2", "Demonstração 3"]}
-            />
+          {/* Mobile Carousel - Always visible on mobile screens */}
+          <div className="md:hidden">
+            <div className="w-full max-w-sm mx-auto px-2">
+              {/* Debug indicator - remove this in production */}
+              <div className="text-center mb-2">
+                <span className="text-xs text-primary bg-primary/10 px-2 py-1 rounded font-mono">
+                  Mobile Carousel Active - Screen &lt; 768px
+                </span>
+              </div>
+              <Carousel 
+                images={["/images/card-0.png", "/images/card-2.png", "/images/card-3.png"]} 
+                altTexts={["Demonstração 1", "Demonstração 2", "Demonstração 3"]}
+              />
+            </div>
           </div>
           
           {/* Desktop Images - Responsive */}
