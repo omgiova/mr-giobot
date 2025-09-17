@@ -156,32 +156,32 @@ export default function BarbershopAILanding() {
       </section>
       <section className="pt-0 pb-8 px-4 bg-muted/10">
   <div className="container mx-auto max-w-6xl">
-    <h2 className="text-3xl md:text-5xl font-bold mb-6 gradient-text-cyan neon-text-glow">
+    <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold mb-6 gradient-text-cyan neon-text-glow text-center">
       Foque em fazer um corte perfeito e deixe a gente dar conta de todo o seu atendimento.
     </h2>
-    <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-16 text-center">
+    <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 md:mb-16 text-center">
       Você não precisa{" "} <strong className="gradient-text-cyan neon-text-glow">fazer tudo sozinho</strong>
     </p>
     {/* Carrossel só no mobile */}
-    <div className="block md:hidden">
+    <div className="block md:hidden px-4">
       <Carousel images={["/images/card-0.png", "/images/card-2.png", "/images/card-3.png"]} />
     </div>
     {/* Imagens lado a lado só no desktop/tablet */}
-    <div className="hidden md:flex flex-row justify-center items-end gap-8">
+    <div className="hidden md:flex flex-row justify-center items-end gap-4 lg:gap-8">
       <img
         src="/images/card-0.png"
         alt="Imagem 1"
-        className="rounded-2xl border cyber-border neon-glow w-88 aspect-[9/16] object-cover"
+        className="rounded-2xl border cyber-border neon-glow w-72 lg:w-88 aspect-[9/16] object-cover"
       />
       <img
         src="/images/card-2.png"
         alt="Imagem 2"
-        className="rounded-2xl border cyber-border neon-glow w-88 aspect-[9/16] object-cover"
+        className="rounded-2xl border cyber-border neon-glow w-72 lg:w-88 aspect-[9/16] object-cover"
       />
       <img
         src="/images/card-3.png"
         alt="Imagem 3"
-        className="rounded-2xl border cyber-border neon-glow w-88 aspect-[9/16] object-cover"
+        className="rounded-2xl border cyber-border neon-glow w-72 lg:w-88 aspect-[9/16] object-cover"
       />
     </div>
   </div>
