@@ -69,34 +69,28 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
     setTouchEnd(null);
   };
 
-  // Auto-advance carousel on mobile with better timing
-  useEffect(() => {
-    if (isMobile && validImages.length > 1) {
-      intervalRef.current = setInterval(() => {
-        next();
-      }, 5000); // Increased to 5 seconds for better UX
-    }
+  // Auto-advance carousel on mobile - DISABLED per user preference
+  // useEffect(() => {
+  //   if (isMobile && validImages.length > 1) {
+  //     intervalRef.current = setInterval(() => {
+  //       next();
+  //     }, 5000);
+  //   }
 
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, [isMobile, next, validImages.length]);
+  //   return () => {
+  //     if (intervalRef.current) {
+  //       clearInterval(intervalRef.current);
+  //     }
+  //   };
+  // }, [isMobile, next, validImages.length]);
 
-  // Pause auto-advance on user interaction
+  // Pause auto-advance on user interaction - DISABLED
   const pauseAutoAdvance = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
+    // Auto-advance disabled per user preference
   };
 
   const resumeAutoAdvance = () => {
-    if (isMobile && validImages.length > 1) {
-      intervalRef.current = setInterval(() => {
-        next();
-      }, 5000);
-    }
+    // Auto-advance disabled per user preference
   };
 
   // Preload images - simplified
@@ -155,67 +149,63 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
 
   return (
     <div className="w-full max-w-sm mx-auto px-4 sm:px-6">
-      <div 
-        className="relative bg-black/20 rounded-2xl overflow-hidden cyber-border neon-glow mobile-carousel"
-        onTouchStart={onTouchStart}
-        onTouchMove={onTouchMove}
-        onTouchEnd={onTouchEnd}
-        onMouseEnter={pauseAutoAdvance}
-        onMouseLeave={resumeAutoAdvance}
-      >
-        {/* Main image */}
-        <div className="relative w-full aspect-[9/16]">
-          <img
-            src={validImages[current]}
-            alt={altTexts[current] || `Demonstração ${current + 1}`}
-            className="w-full h-full object-cover transition-all duration-500 ease-in-out"
-            loading="eager"
-            decoding="async"
-            onError={(e) => {
-              console.error('Image failed to load:', validImages[current]);
-              setHasError(true);
-            }}
-          />
-          
-          {/* Gradient overlay for better button visibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20 pointer-events-none"></div>
-        </div>
-
-        {/* Navigation buttons - optimized for mobile */}
+      {/* Carousel container with external navigation */}
+      <div className="flex items-center gap-4">
+        {/* Left navigation button - outside image area */}
         <button
           onClick={() => {
             prev();
-            pauseAutoAdvance();
-            setTimeout(resumeAutoAdvance, 3000);
           }}
-          className="absolute left-3 top-1/2 -translate-y-1/2 w-14 h-14 bg-black/70 hover:bg-black/90 active:bg-black/95 text-white rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm border border-white/30 touch-manipulation active:scale-90 z-10"
+          className="flex-shrink-0 w-12 h-12 bg-primary/80 hover:bg-primary text-primary-foreground rounded-full flex items-center justify-center transition-all duration-200 cyber-border neon-glow touch-manipulation active:scale-90 z-10"
           aria-label="Imagem anterior"
           type="button"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
 
+        {/* Image container without internal navigation */}
+        <div 
+          className="relative bg-black/20 rounded-2xl overflow-hidden cyber-border neon-glow flex-1 max-w-xs"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
+          {/* Main image */}
+          <div className="relative w-full aspect-[9/16]">
+            <img
+              src={validImages[current]}
+              alt={altTexts[current] || `Demonstração ${current + 1}`}
+              className="w-full h-full object-cover transition-all duration-500 ease-in-out"
+              loading="eager"
+              decoding="async"
+              onError={(e) => {
+                console.error('Image failed to load:', validImages[current]);
+                setHasError(true);
+              }}
+            />
+          </div>
+
+          {/* Image counter overlay */}
+          <div className="absolute top-4 right-4 bg-black/80 text-white text-sm px-3 py-2 rounded-full backdrop-blur-sm border border-white/20">
+            {current + 1} / {validImages.length}
+          </div>
+        </div>
+
+        {/* Right navigation button - outside image area */}
         <button
           onClick={() => {
             next();
-            pauseAutoAdvance();
-            setTimeout(resumeAutoAdvance, 3000);
           }}
-          className="absolute right-3 top-1/2 -translate-y-1/2 w-14 h-14 bg-black/70 hover:bg-black/90 active:bg-black/95 text-white rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm border border-white/30 touch-manipulation active:scale-90 z-10"
+          className="flex-shrink-0 w-12 h-12 bg-primary/80 hover:bg-primary text-primary-foreground rounded-full flex items-center justify-center transition-all duration-200 cyber-border neon-glow touch-manipulation active:scale-90 z-10"
           aria-label="Próxima imagem"
           type="button"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
           </svg>
         </button>
-
-        {/* Image counter overlay */}
-        <div className="absolute top-4 right-4 bg-black/80 text-white text-sm px-3 py-2 rounded-full backdrop-blur-sm border border-white/20">
-          {current + 1} / {validImages.length}
-        </div>
       </div>
       
       {/* Dots indicator - mobile optimized */}
@@ -225,8 +215,6 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
             key={idx}
             onClick={() => {
               goToSlide(idx);
-              pauseAutoAdvance();
-              setTimeout(resumeAutoAdvance, 3000);
             }}
             className={`transition-all duration-300 touch-manipulation rounded-full min-w-[44px] min-h-[44px] flex items-center justify-center ${
               idx === current 
@@ -245,7 +233,7 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 13l3 3 7-7" />
             </svg>
-            Deslize para navegar
+            
           </p>
         </div>
       )}
