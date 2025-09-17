@@ -148,15 +148,15 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
   }
 
   return (
-    <div className="w-full max-w-sm mx-auto px-4 sm:px-6">
-      {/* Carousel container with external navigation */}
-      <div className="flex items-center gap-4">
+    <div className="w-full mx-auto px-2">
+      {/* Carousel container with external navigation - full width */}
+      <div className="flex items-center gap-3">
         {/* Left navigation button - outside image area */}
         <button
           onClick={() => {
             prev();
           }}
-          className="flex-shrink-0 w-12 h-12 bg-primary/80 hover:bg-primary text-primary-foreground rounded-full flex items-center justify-center transition-all duration-200 cyber-border neon-glow touch-manipulation active:scale-90 z-10"
+          className="flex-shrink-0 w-12 h-12 bg-white/90 hover:bg-white text-black rounded-full flex items-center justify-center transition-all duration-200 cyber-border shadow-lg touch-manipulation active:scale-90 z-10"
           aria-label="Imagem anterior"
           type="button"
         >
@@ -165,9 +165,9 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
           </svg>
         </button>
 
-        {/* Image container without internal navigation */}
+        {/* Image container without internal navigation - expanded */}
         <div 
-          className="relative bg-black/20 rounded-2xl overflow-hidden cyber-border neon-glow flex-1 max-w-xs"
+          className="relative bg-black/20 rounded-2xl overflow-hidden cyber-border neon-glow flex-1"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
@@ -186,11 +186,6 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
               }}
             />
           </div>
-
-          {/* Image counter overlay */}
-          <div className="absolute top-4 right-4 bg-black/80 text-white text-sm px-3 py-2 rounded-full backdrop-blur-sm border border-white/20">
-            {current + 1} / {validImages.length}
-          </div>
         </div>
 
         {/* Right navigation button - outside image area */}
@@ -198,7 +193,7 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
           onClick={() => {
             next();
           }}
-          className="flex-shrink-0 w-12 h-12 bg-primary/80 hover:bg-primary text-primary-foreground rounded-full flex items-center justify-center transition-all duration-200 cyber-border neon-glow touch-manipulation active:scale-90 z-10"
+          className="flex-shrink-0 w-12 h-12 bg-white/90 hover:bg-white text-black rounded-full flex items-center justify-center transition-all duration-200 cyber-border shadow-lg touch-manipulation active:scale-90 z-10"
           aria-label="Próxima imagem"
           type="button"
         >
@@ -207,36 +202,6 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
           </svg>
         </button>
       </div>
-      
-      {/* Dots indicator - mobile optimized */}
-      <div className="flex justify-center mt-6 gap-4">
-        {validImages.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => {
-              goToSlide(idx);
-            }}
-            className={`transition-all duration-300 touch-manipulation rounded-full min-w-[44px] min-h-[44px] flex items-center justify-center ${
-              idx === current 
-                ? "w-10 h-4 bg-primary" 
-                : "w-4 h-4 bg-muted hover:bg-muted-foreground/60 active:scale-110"
-            }`}
-            aria-label={`Ver imagem ${idx + 1}`}
-          />
-        ))}
-      </div>
-
-      {/* Swipe indicator for mobile */}
-      {isMobile && (
-        <div className="text-center mt-4">
-          <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 13l3 3 7-7" />
-            </svg>
-            
-          </p>
-        </div>
-      )}
     </div>
   );
 }
