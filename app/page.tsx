@@ -15,6 +15,8 @@ import {
   Calendar,
   Bot,
   Smartphone,
+  Scissors,
+  Heart,
 } from "lucide-react"
 import Carousel from "@/components/ui/carousel"
 import { useIsMobile } from "@/components/ui/use-mobile"
@@ -252,6 +254,95 @@ export default function BarbershopAILanding() {
 <h3 className="text-2xl font-bold gradient-text-cyan neon-text-glow-green text-center mb-8">
   Na sua própria agenda, organizado com lembretes.
 </h3>
+
+          {/* Cloned Cards Section - Comparison */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16 mt-20">
+            <Card className="cyber-border border-primary/50 bg-primary/5 neon-glow">
+              <CardHeader>
+                <CardTitle className="text-primary flex items-center gap-2 text-lg">
+                  <MessageSquare className="w-6 h-6" />
+                  Por que um atendimento eficiente, instantâneo e inteligente funciona?
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="bg-primary/10 p-4 rounded-lg border border-primary/20">
+                  <p className="text-primary font-medium text-base leading-relaxed">
+                    Quando falamos em atendimento no WhatsApp, a paciência é mínima. Seu cliente quer resposta agora e se não tiver, procura outra barbearia.
+                  </p>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <Clock className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <p className="text-foreground">
+                      <strong>70% dos seus clientes potenciais desistem de um agendamento</strong> se não recebem uma resposta em até 5 minutos no WhatsApp. <em className="text-primary font-medium">Você está perdendo 7 em cada 10 clientes por demora!</em>
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <TrendingUp className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <p className="text-foreground">
+                      <strong>92% das empresas perdem vendas devido à demora na resposta no WhatsApp</strong>, de acordo com um estudo do WhatsApp Business. <em className="text-primary font-medium">Sua barbearia não pode ser uma delas!</em>
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Users className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <p className="text-foreground">
+                      <strong>67% dos clientes de salões de beleza e barbearias desejam agendar online.</strong> <em className="text-primary font-medium">O WhatsApp é a plataforma perfeita para atender essa demanda crescente e simplificar a vida dos seus clientes.</em>
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Zap className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <p className="text-foreground">
+                      <strong>90% dos clientes escolhem quem responde rápido.</strong>
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Star className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <p className="text-foreground">
+                      <strong>Só 1 experiência negativa já basta para 32% nunca mais voltarem.</strong>
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="cyber-border border-primary/50 bg-primary/5 neon-glow">
+              <CardHeader>
+                <CardTitle className="text-primary flex items-center gap-2 text-lg">
+                  <TrendingUp className="w-6 h-6" />
+                  E o resultado?
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <p className="text-foreground">
+                    <strong>90% de taxa de conversão</strong> - Empresas que respondem em até 1 minuto têm 90% de taxa de conversão positiva, enquanto as que demoram 30 minutos ou mais têm apenas 10% de sucesso. <em className="text-primary font-medium">A velocidade da sua resposta pode multiplicar seus agendamentos em 9 vezes!</em>
+                  </p>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <Scissors className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <p className="text-foreground">
+                    <strong>50% menos tempo</strong> - Barbearias que adotaram a automação já relatam redução de até 50% no tempo gasto em trocas de mensagens e <em className="text-primary font-medium">um aumento significativo na taxa de novos agendamentos.</em>
+                  </p>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <Heart className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <p className="text-foreground">
+                    <strong>82,9% dos clientes</strong> - Uma esmagadora maioria, 82,9% dos clientes, acredita que <em className="text-primary font-medium">um bom atendimento influencia diretamente sua fidelização a uma empresa.</em>
+                  </p>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <Zap className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <p className="text-foreground">
+                    <strong>100% de redução</strong> - Redução de até 100% no tempo de atendimento.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
           <div className="text-center">
             <Card className="cyber-border bg-card/50 neon-glow inline-block p-8 mt-20">
               <div className="space-y-8">
