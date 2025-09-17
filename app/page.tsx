@@ -380,7 +380,7 @@ export default function BarbershopAILanding() {
                 aria-label="MR. Giobot"
               />
             </div>
-            <p className="text-muted-foreground">© 2025 Mr. Giobot - Transformando o futuro com automações.</p>
+            <p className="text-muted-foreground">© 2025 Mr. Giobot - Transformando o futuro com automações. Por Giovani Amorim.</p>
           </div>
         </div>
       </footer>
