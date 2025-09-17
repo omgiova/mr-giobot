@@ -16,7 +16,7 @@ import {
   Bot,
   Smartphone,
 } from "lucide-react"
-import Carousel from "../components/ui/Carousel"
+import Carousel from "@/components/ui/Carousel"
 import { useIsMobile } from "@/components/ui/use-mobile"
 
 export default function BarbershopAILanding() {
