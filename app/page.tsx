@@ -14,7 +14,7 @@ import {
   Bot,
   Smartphone,
 } from "lucide-react"
-import Carousel from ".../components/ui/Carousel";
+import Carousel from "../components/ui/Carousel";
 
 export default function BarbershopAILanding() {
   // Supondo que suas imagens estejam em public/images/

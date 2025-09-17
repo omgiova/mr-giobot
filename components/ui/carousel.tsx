@@ -247,7 +247,7 @@ interface ImageCarouselProps {
   altTexts?: string[];
 }
 
-export default function ImageCarousel({ images, altTexts = [] }: ImageCarouselProps) {
+export default function Carousel({ images, altTexts = [] }: CarouselProps) {
   const [current, setCurrent] = useState(0);
 
   const next = () => setCurrent((prev) => (prev + 1) % images.length);
