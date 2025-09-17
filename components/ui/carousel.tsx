@@ -151,12 +151,12 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
     <div className="w-full mx-auto px-2">
       {/* Carousel container with external navigation - full width */}
       <div className="flex items-center gap-3">
-        {/* Left navigation button - outside image area */}
+        {/* Left navigation button - outside image area - SAME COLOR AS RIGHT */}
         <button
           onClick={() => {
             prev();
           }}
-          className="flex-shrink-0 w-12 h-12 bg-white/90 hover:bg-white text-black rounded-full flex items-center justify-center transition-all duration-200 cyber-border shadow-lg touch-manipulation active:scale-90 z-10"
+          className="flex-shrink-0 w-12 h-12 bg-red-500/90 hover:bg-red-500 text-white rounded-full flex items-center justify-center transition-all duration-200 cyber-border shadow-lg touch-manipulation active:scale-90 z-10"
           aria-label="Imagem anterior"
           type="button"
         >
@@ -188,12 +188,12 @@ export default function Carousel({ images, altTexts = [] }: CarouselProps) {
           </div>
         </div>
 
-        {/* Right navigation button - outside image area */}
+        {/* Right navigation button - outside image area - DIFFERENT COLOR */}
         <button
           onClick={() => {
             next();
           }}
-          className="flex-shrink-0 w-12 h-12 bg-white/90 hover:bg-white text-black rounded-full flex items-center justify-center transition-all duration-200 cyber-border shadow-lg touch-manipulation active:scale-90 z-10"
+          className="flex-shrink-0 w-12 h-12 bg-red-500/90 hover:bg-red-500 text-white rounded-full flex items-center justify-center transition-all duration-200 cyber-border shadow-lg touch-manipulation active:scale-90 z-10"
           aria-label="Próxima imagem"
           type="button"
         >

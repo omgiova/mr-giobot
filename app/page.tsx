@@ -175,7 +175,7 @@ export default function BarbershopAILanding() {
           
           {/* Mobile Carousel - Always visible on mobile screens */}
           <div className="md:hidden">
-            <div className="w-full max-w-md mx-auto px-2">
+            <div className="w-full max-w-sm mx-auto px-2">
               <Carousel 
                 images={images} 
                 altTexts={["Demonstração 1", "Demonstração 2", "Demonstração 3"]}
