@@ -39,7 +39,7 @@ export default function BarbershopAILanding() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             <div className="space-y-4 sm:space-y-6 lg:space-y-8 order-1">
               <Badge className="bg-accent/20 text-accent border-accent/50 cyber-border px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold neon-glow-green w-fit">
-                Mr. Giobot: A revolução do atendimento no WhatsApp
+                Mr. Giobot: O piloto automático do barbeiro no WhatsApp
               </Badge>
 
               <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
