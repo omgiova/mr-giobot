@@ -58,7 +58,7 @@ export default function BarbershopAILanding() {
                 Chega de perder clientes por demorar um pouco pra responder, ou aquele que manda mensagem 10 da noite de um sábado.
                 Nossa solução tem a{" "}
                 <strong className="text-primary neon-text-glow">maior paciência do mundo </strong>
-                e vai atender seus clientes com a naturalidade de uma conversa real <strong className="text-primary neon-text-glow">24 horas por dia</strong>. Se liga no exemplo ao lado!
+                e vai atender seus clientes com a naturalidade de uma conversa real <strong className="text-primary neon-text-glow">24 horas por dia</strong>. Se liga no vídeo de exemplo!
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
