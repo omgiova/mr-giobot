@@ -55,7 +55,7 @@ export default function BarbershopAILanding() {
               </div>
 
               <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-muted-foreground leading-relaxed mobile-text">
-                Chega de perder clientes por demorar um pouco pra responder, ou aquele que manda mensagem 10 da noite de um sábado.
+                Chega de perder cliente por demorar um pouco pra responder, ou aquele que manda mensagem 10 da noite de um sábado.
                 Nossa solução tem a{" "}
                 <strong className="text-primary neon-text-glow">maior paciência do mundo </strong>
                 e vai atender seus clientes com a naturalidade de uma conversa real <strong className="text-primary neon-text-glow">24 horas por dia</strong>. Se liga no vídeo de exemplo!
@@ -176,7 +176,7 @@ export default function BarbershopAILanding() {
       <section className="py-6 sm:py-8 lg:py-12 px-4 sm:px-6 bg-muted/10 carousel-mobile">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-4 sm:mb-6 lg:mb-8 gradient-text-cyan neon-text-glow text-center mobile-text">
-            Foque em fazer um corte perfeito e deixe a gente dar conta de todo o seu atendimento.
+            Foque em fazer um corte perfeito e deixe a gente dar conta de todo o seu atendimento
           </h2>
           <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 sm:mb-8 lg:mb-16 text-center mobile-text">
             Você não precisa{" "} <strong className="gradient-text-cyan neon-text-glow">fazer tudo sozinho</strong>
