@@ -62,24 +62,31 @@ export default function BarbershopAILanding() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Button
-                  size="lg"
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground cyber-border px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold neon-glow-green w-full sm:w-auto mobile-touch-target"
+                <a
+                  href="https://formulario-mr-giobot.giovaniamorim.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto cursor-pointer"
                 >
-                  Teste grátis
-                </Button>
+                  <Button
+                    size="lg"
+                    className="bg-accent hover:bg-accent/90 text-accent-foreground cyber-border px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold neon-glow-green w-full sm:w-auto mobile-touch-target cursor-pointer"
+                  >
+                    Teste grátis
+                  </Button>
+                </a>
                 <Button
                   variant="outline"
                   size="lg"
                   className="border-primary text-primary hover:bg-primary/10 cyber-border px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg bg-transparent neon-glow w-full sm:w-auto mobile-touch-target"
                 >
                   <a
-                    href="https://wa.me/5511986501499?text=Ol%C3%A1!%20Quero%20minha%20demonstra%C3%A7%C3%A3o%20do%20MR.%20GIOBOT%2C%20a%20m%C3%A1quina%20de%20agendamentos%20para%20barbearias%21"
+                    href="https://wa.me/5511986501499?text=Ol%C3%A1%21%20Quero%20implantar%20o%20Mr.%20Giobot%2C%20a%20m%C3%A1quina%20de%20agendamentos%2C%20na%20minha%20barbearia%21"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full text-center"
                   >
-                    Agendar demonstração
+                    Agendar implantação agora
                   </a>
                 </Button>
               </div>
@@ -449,24 +456,31 @@ export default function BarbershopAILanding() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button
-                    size="lg"
-                    className="bg-accent hover:bg-accent/90 text-accent-foreground cyber-border px-8 py-4 text-lg font-bold neon-glow-green"
+                  <a
+                    href="https://formulario-mr-giobot.giovaniamorim.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto cursor-pointer"
                   >
-                    Teste grátis
-                  </Button>
+                    <Button
+                      size="lg"
+                      className="bg-accent hover:bg-accent/90 text-accent-foreground cyber-border px-8 py-4 text-lg font-bold neon-glow-green cursor-pointer"
+                    >
+                      Teste grátis
+                    </Button>
+                  </a>
                   <Button
                     variant="outline"
                     size="lg"
                     className="border-primary text-primary hover:bg-primary/10 cyber-border px-8 py-4 text-lg bg-transparent neon-glow"
                   >
                     <a
-    href="https://wa.me/5511986501499?text=Ol%C3%A1!%20Quero%20minha%20demonstra%C3%A7%C3%A3o%20do%20MR.%20GIOBOT%2C%20a%20m%C3%A1quina%20de%20agendamentos%20para%20barbearias%21"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Agendar demonstração
-  </a>
+                      href="https://wa.me/5511986501499?text=Ol%C3%A1%21%20Quero%20implantar%20o%20Mr.%20Giobot%2C%20a%20m%C3%A1quina%20de%20agendamentos%2C%20na%20minha%20barbearia%21"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Agendar implantação
+                    </a>
                   </Button>
                 </div>
               </div>
