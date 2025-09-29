@@ -37,8 +37,7 @@ export default function BarbershopAILanding() {
 <Head>
   <title>{SEO_CONFIG.title}</title>
   <meta name="description" content={SEO_CONFIG.description} />
-  <link rel="canonical" href={SEO_CONFIG.canonical} />
-
+  <link rel="canonical" href="https://oferta-especial-mr-giobot.giovaniamorim.com/" />
   <meta property="og:title" content={SEO_CONFIG.openGraph.title} />
   <meta property="og:description" content={SEO_CONFIG.openGraph.description} />
   <meta property="og:type" content={SEO_CONFIG.openGraph.type} />
