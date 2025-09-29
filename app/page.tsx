@@ -21,6 +21,7 @@ import {
 import Carousel from "@/components/ui/carousel"
 import { useIsMobile } from "@/components/ui/use-mobile"
 import Head from 'next/head'
+import { SEO_CONFIG } from './seo.config'; // Importe o SEO_CONFIG
 
 export default function BarbershopAILanding() {
   const isMobile = useIsMobile()
