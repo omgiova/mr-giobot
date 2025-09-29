@@ -32,65 +32,35 @@ export default function BarbershopAILanding() {
     "/images/card-2.png",
     "/images/card-3.png",
   ];
-
-  // Structured data for SEO
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Mr. Giobot",
-    "url": "https://mr-giobot.vercel.app", // Replace with your actual deployment URL
-    "logo": "https://mr-giobot.vercel.app/icon3.png", // Replace with your actual deployment URL
-    "sameAs": [
-      "https://www.instagram.com/mrgiobot",
-      "https://www.facebook.com/mrgiobot/"
-    ],
-    "description": "Transforme sua barbearia em uma máquina de agendamentos com Mr. Giobot, o assistente de IA que atende seus clientes 24/7 no WhatsApp."
-  };
-
   return (
     <>
 <Head>
-  {/* Título da Página: O mais importante para o Google e para quem pesquisa */}
-  <title>Mr. Giobot: Automação Inteligente no WhatsApp para Barbearias | O Piloto Automático do Barbeiro no WhatsApp</title>
+  <title>{SEO_CONFIG.title}</title>
+  <meta name="description" content={SEO_CONFIG.description} />
+  <link rel="canonical" href={SEO_CONFIG.canonical} />
 
-  {/* Descrição da Página: O que aparece abaixo do título no Google. Precisa ser atraente! */}
-  <meta name="description" content="Mr. Giobot: A automação inteligente que revoluciona o atendimento e agendamento de barbearias no WhatsApp. Ganhe tempo, economize dinheiro e lote sua agenda. Teste grátis!" />
+  <meta property="og:title" content={SEO_CONFIG.openGraph.title} />
+  <meta property="og:description" content={SEO_CONFIG.openGraph.description} />
+  <meta property="og:type" content={SEO_CONFIG.openGraph.type} />
+  <meta property="og:url" content={SEO_CONFIG.openGraph.url} />
+  <meta property="og:image" content={SEO_CONFIG.openGraph.images[0].url} />
+  <meta property="og:site_name" content={SEO_CONFIG.openGraph.site_name} />
 
-  {/* URL Canônica: Diz ao Google qual é a versão 'oficial' da sua página, evitando duplicidade */}
-  <link rel="canonical" href="https://oferta-especial-mr-giobot.giovaniamorim.com/" />
+  <meta name="twitter:card" content={SEO_CONFIG.twitter.card} />
+  <meta name="twitter:site" content={SEO_CONFIG.twitter.site} />
+  <meta name="twitter:creator" content={SEO_CONFIG.twitter.creator} />
+  <meta name="twitter:title" content={SEO_CONFIG.twitter.title} />
+  <meta name="twitter:description" content={SEO_CONFIG.twitter.description} />
+  <meta name="twitter:image" content={SEO_CONFIG.twitter.image} />
 
-  {/* Open Graph Tags (para compartilhamento bonito no WhatsApp, Facebook, LinkedIn ) */}
-  <meta property="og:title" content="Mr. Giobot: Automação Inteligente no WhatsApp para Barbearias" />
-  <meta property="og:description" content="A automação inteligente que revoluciona o atendimento e agendamento de barbearias no WhatsApp. Ganhe tempo e aumente seu lucro. Teste grátis!" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://oferta-especial-mr-giobot.giovaniamorim.com/" />
-  <meta property="og:image" content="https://oferta-especial-mr-giobot.giovaniamorim.com/images/og-image.jpg" /> {/* Crie uma imagem atraente para compartilhamento (1200x630px ) */}
-  <meta property="og:site_name" content="Mr. Giobot" />
-
-  {/* Twitter Card Tags (para compartilhamento no Twitter) */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@mrgiobot" /> {/* Se tiver um Twitter, coloque o @ aqui */}
-  <meta name="twitter:creator" content="@mrgiobot" />
-  <meta name="twitter:title" content="Mr. Giobot: Automação Inteligente WhatsApp para Barbearias" />
-  <meta name="twitter:description" content="A automação inteligente que revoluciona o atendimento e agendamento de barbearias no WhatsApp. Ganhe tempo e aumente seu lucro. Teste grátis!" />
-  <meta name="twitter:image" content="https://oferta-especial-mr-giobot.giovaniamorim.com/images/twitter-image.jpg" />
-
-  {/* Structured Data (já existente, mas com a URL correta e descrição ajustada ) */}
   <script
     type="application/ld+json"
-    dangerouslySetInnerHTML={{ __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Mr. Giobot",
-      "url": "https://oferta-especial-mr-giobot.giovaniamorim.com/", // Sua URL final
-      "logo": "https://oferta-especial-mr-giobot.giovaniamorim.com/icon3.png", // Sua URL final para o logo
-      "sameAs": [
-        "https://www.instagram.com/mrgiobot",
-        "https://www.facebook.com/mrgiobot/"
-      ],
-      "description": "Transforme sua barbearia em uma máquina de agendamentos com Mr. Giobot, a automação inteligente que atende seus clientes 24/7 no WhatsApp."
-    } ) }}
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(SEO_CONFIG.structuredData) }}
   />
+  <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(SEO_CONFIG.faq ) }}
+/>
 </Head>
       <div className="min-h-screen bg-background text-foreground cyber-grid">
         {/* Hero Section - Fully Responsive */}
@@ -177,7 +147,7 @@ export default function BarbershopAILanding() {
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Apresentamos{" "}
-              <strong className="gradient-text-cyan neon-text-glow">Mr. Giobot, o piloto automático do barbeiro</strong>
+              <strong className="gradient-text-cyan neon-text-glow">Mr. Giobot, o piloto automático do barbeiro no WhatsApp</strong>
             </p>
 
             {/* Cards comparativos */}

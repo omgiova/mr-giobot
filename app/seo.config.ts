@@ -36,5 +36,27 @@ export const SEO_CONFIG = {
       "https://www.facebook.com/mrgiobot/"
     ],
     description: "Transforme sua barbearia em uma máquina de agendamentos com Mr. Giobot, a automação inteligente que atende seus clientes 24/7 no WhatsApp. Otimize seu tempo, reduza custos e lote sua agenda com nosso assistente virtual especializado para barbearias."
-  }
+  },
+  faq: {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Preciso ter conhecimento técnico para usar o Mr. Giobot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não! Nossa equipe cuida de toda a configuração inicial. Você só precisa nos dar acesso à sua agenda e nós preparamos tudo para você começar a usar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como funciona a integração com o Google Agenda ou Booksy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O Mr. Giobot se conecta diretamente à sua agenda para verificar horários disponíveis, marcar novos agendamentos e enviar lembretes, tudo de forma automática e sem conflitos."
+      }
+    }
+  ]
+}
 };
